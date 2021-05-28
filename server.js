@@ -3,7 +3,7 @@ const app = express();
 
 const { animals } = require('./data/animals');
 
-// filter animal data returing a new filtered array
+// filter animal data returing a new filtered array // delete comment later
 function filterByQuery(query, animalsArray) {
     let personalityTraitsArray = [];
     // Note that we save the animalsArray as filteredResults here:

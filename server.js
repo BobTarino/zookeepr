@@ -43,6 +43,11 @@ function filterByQuery(query, animalsArray) {
     // return the filtered results:
     return filteredResults;
 }
+//add funcion that takes in id and array of animals & returns single object
+function findById(id, animalsArray) {
+  const result = animalsArray.filter(animal => animal.id === id)[0];
+  return result;
+}
 //route to animal data
 app.get('/api/animals', (req, res) => {
     let results = animals;
@@ -50,6 +55,15 @@ app.get('/api/animals', (req, res) => {
       results = filterByQuery(req.query, results);
     }
     res.json(results);
+});
+//param route must come after the other GET route 
+app.get('/api/animals/:id', (req, res) => {
+  const result = findById(req.params.id, animals);
+  if (result) {
+    res.json(result);
+  } else {
+    res.send(404);
+  }
 });
 // think of port as "classroom" on college campus
 app.listen(PORT, () => {

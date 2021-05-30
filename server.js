@@ -106,7 +106,7 @@ app.post('/api/animals', (req, res) => {
   }
 });
 
-// make routes to html pages
+// make GET routes taht serve front-end application to the client
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });

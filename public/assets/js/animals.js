@@ -24,15 +24,27 @@ const printResults = resultArr => {
 
 const getAnimals = (formData = {}) => {
   let queryUrl = '/api/animals?';
-
+  // formData argument passed through Object.entries() method to create query parameters 
   Object.entries(formData).forEach(([key, value]) => {
     queryUrl += `${key}=${value}&`;
   });
 
   console.log(queryUrl);
+  //make request using queryUrl
+  fetch(queryUrl)
+  .then(response => {
+    if (!response.ok) {
+      return alert('Error: ' + response.statusText);
+    }
+    return response.json();
+  })
+  .then(animalData => {
+    console.log(animalData);
+    printResults(animalData);
+  });
 
 };
-
+// gathers all of the form input data and packages it as an object to getAnimals() as formData argument 
 const handleGetAnimalsSubmit = event => {
   event.preventDefault();
   const dietRadioHTML = $animalForm.querySelectorAll('[name="diet"]');

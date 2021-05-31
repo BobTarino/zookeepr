@@ -119,22 +119,13 @@
       "id": "11"
     },
     {
-      "name": "Larry",
-      "species": "lemur",
-      "diet": "omnivore",
-      "personalityTraits": [
-        "hungry"
-      ],
-      "id": "12"
-    },
-    {
       "name": "Andre",
       "species": "Cat",
       "diet": "carnivore",
       "personalityTraits": [
         "loving"
       ],
-      "id": "13"
+      "id": "12"
     },
     {
       "name": "Ryan",
@@ -143,7 +134,7 @@
       "personalityTraits": [
         "hungry"
       ],
-      "id": "14"
+      "id": "13"
     }
   ]
 }
